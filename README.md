@@ -4,7 +4,7 @@ A simple Notes application built using **Flutter** and **Firebase** to demonstra
 
 ---
 
-## 🚀 Features
+##  Features
 
 - Email & Password Authentication
 - Create, Read, Update, Delete notes
@@ -19,7 +19,7 @@ A simple Notes application built using **Flutter** and **Firebase** to demonstra
 
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 - Flutter
 - Firebase Authentication
@@ -28,7 +28,7 @@ A simple Notes application built using **Flutter** and **Firebase** to demonstra
 
 ---
 
-## ⚙️ Project Setup
+##  Project Setup
 
 1. Install Flutter SDK
 2. Configure an Android emulator or connect a physical device
@@ -39,14 +39,14 @@ A simple Notes application built using **Flutter** and **Firebase** to demonstra
 
 ---
 
-## ▶️ Run the App Locally
+## Run the App Locally
 
 ```bash
 flutter pub get
 flutter run
 
 
-🧠 Firestore Database Structure
+ Firestore Database Structure
 
 users (collection)
  └── {userId} (document)

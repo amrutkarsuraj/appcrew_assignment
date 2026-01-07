@@ -18,7 +18,6 @@ class NotesListScreen extends ConsumerStatefulWidget {
 class _NotesListScreenState extends ConsumerState<NotesListScreen> {
   String searchQuery = '';
 
-  // 🔹 Logout confirmation dialog
   Future<void> _showLogoutDialog() async {
     final shouldLogout = await showDialog<bool>(
       context: context,
@@ -43,7 +42,6 @@ class _NotesListScreenState extends ConsumerState<NotesListScreen> {
     }
   }
 
-  // 🔹 Delete note
   Future<void> _deleteNote(String noteId) async {
     final user = FirebaseAuth.instance.currentUser;
     if (user == null) return;
@@ -97,7 +95,6 @@ class _NotesListScreenState extends ConsumerState<NotesListScreen> {
 
       body: Column(
         children: [
-          // 🔍 Search bar
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
             child: TextField(
@@ -121,7 +118,6 @@ class _NotesListScreenState extends ConsumerState<NotesListScreen> {
             ),
           ),
 
-          // 📄 Notes list
           Expanded(
             child: notesAsync.when(
               data: (notes) {
@@ -153,7 +149,6 @@ class _NotesListScreenState extends ConsumerState<NotesListScreen> {
                       child: Slidable(
                         key: ValueKey(note.id),
 
-                        // 👉 Swipe right (Edit)
                         startActionPane: ActionPane(
                           motion: const DrawerMotion(),
                           children: [
@@ -186,7 +181,6 @@ class _NotesListScreenState extends ConsumerState<NotesListScreen> {
                           ],
                         ),
 
-                        // 👉 Swipe left (Delete)
                         endActionPane: ActionPane(
                           motion: const DrawerMotion(),
                           children: [
@@ -201,7 +195,6 @@ class _NotesListScreenState extends ConsumerState<NotesListScreen> {
                           ],
                         ),
 
-                        // 🧾 Note card
                         child: Card(
                           elevation: 2,
                           shape: RoundedRectangleBorder(

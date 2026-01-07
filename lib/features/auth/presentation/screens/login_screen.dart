@@ -28,13 +28,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
     try {
       if (isLogin) {
-        // 🔐 LOGIN
         await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: emailController.text.trim(),
           password: passwordController.text.trim(),
         );
       } else {
-        // 🆕 SIGN UP
         await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: emailController.text.trim(),
           password: passwordController.text.trim(),
@@ -139,7 +137,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
                   const SizedBox(height: 40),
 
-                  // 📧 Email
                   TextFormField(
                     controller: emailController,
                     keyboardType: TextInputType.emailAddress,
@@ -161,7 +158,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
                   const SizedBox(height: 16),
 
-                  // 🔑 Password with Show/Hide
                   TextFormField(
                     controller: passwordController,
                     obscureText: obscurePassword,
@@ -195,7 +191,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
                   const SizedBox(height: 24),
 
-                  // 🔘 Submit Button
                   SizedBox(
                     height: 48,
                     child: ElevatedButton(
@@ -210,7 +205,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
                   const SizedBox(height: 12),
 
-                  // 🔁 Toggle Login / Signup
                   TextButton(
                     onPressed: isLoading
                         ? null
